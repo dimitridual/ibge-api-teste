@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API IBGE teste</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+</head>
+<body>
+    <h1>Pesquisa IBGE</h1>
+    <section id="params">
+        <h2>Parametros</h2>
+        <h3>Selecione o(s) município(s):</h3>
+        <div id="municipios">
+            <input class="municipio-checkbox" type="checkbox" id="all" name="municipio" value="all">
+            <label for="all">Todos</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="frontin" name="municipio" value="frontin">
+            <label for="frontin">Eng. Paulo de Frontin</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="mendes" name="municipio" value="mendes">
+            <label for="mendes">Mendes</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="mpereira" name="municipio" value="mpereira">
+            <label for="mpereira">Miguel Pereira</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="paracambi" name="municipio" value="paracambi">
+            <label for="paracambi">Paracambi</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="paty" name="municipio" value="paty">
+            <label for="paty">Paty do Alferes</label><br>
+            <input class="municipio-checkbox" type="checkbox" id="vassouras" name="municipio" value="vassouras">
+            <label for="vassouras">Vassouras</label><br>
+        </div>
+        <h3>Selecione o indicador:</h3>
+        <select id="indicador">
+            <option value="populacao">População</option>
+            <option value="economia">Economia</option>
+        </select>
+    </section>
+    <section id="results">
+        <h2>Resultados</h2>
+        <h3>Dados gerais</h3>
+        <ul id="results-gerais">
+            <li>Área territorial total (km²): <span id="area"></span></li>
+        </ul>
+        <h3>Indicador selecionado</h3>
+        <ul id="results-populacao">
+            <li>Populacao residente: <span id="populacao"></span></li>
+            <li>Densidade demográfica (hab/km²): <span id="densidade"></span></li>
+        </ul>
+        <canvas id="populacao-chart"></canvas>
+        <ul id="results-economia" hidden>
+            <li>Produto Interno Bruto (PIB): <span id="pib"></span></li>
+            <li>Renda per capita: <span id="renda"></span></li>
+        </ul>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
